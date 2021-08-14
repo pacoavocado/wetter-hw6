@@ -27,8 +27,9 @@ h1 {
     
 }
 
-main {
-    display:flex;
-    flex-direction: column;
 
+nav {
+    position:absolute;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
