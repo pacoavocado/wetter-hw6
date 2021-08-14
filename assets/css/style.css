@@ -27,12 +27,16 @@ h1 {
     
 }
 
-
+/* 
 nav {
     position:absolute;
     align-items: flex-start;
     justify-content: flex-start;
-}
+} */
+
+
+
+
 
 .daily-cards {
     display: flex;
