@@ -33,3 +33,9 @@ nav {
     align-items: flex-start;
     justify-content: flex-start;
 }
+
+.daily-cards {
+    display: flex;
+    flex-direction: row;
+    
+}

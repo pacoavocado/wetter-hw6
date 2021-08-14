@@ -18,9 +18,9 @@
     </header>
      <main class="row"> 
         <nav class="navbar navbar-light bg-light">
-            <form >
-                <input class="form-control mr-sm-2" type="search" placeholder="enter a city" aria-label="Search">
-                <button class="btn btn-outline-success my-2 btn-block" type="submit">Search</button>
+            <form id="search-form">
+                <input class="form-control mr-sm-2" type="search" placeholder="enter a city" id="search-input">
+                <button class="btn btn-outline-success my-2 btn-block" type="submit" id="format-input">Search</button>
             </form>
         </nav>
         <div class="col-8 container">
@@ -33,47 +33,20 @@
                   <p class="lead"></p>
                 </div>
             </div>
-            <div>
-                <div class="row">
+            <div class="row">
+                <div class="daily-cards">
                     <div class="card text-white bg-dark pr-1" style="max-width: 12rem;">
-                        <div class="card-header">Header</div>
+                        <div class="card-date"></div>
                         <div class="card-body">
-                        <h5 class="card-title">Dark card title</h5>
-                        <p class="card-text"></p>
-                    </div>
-                </div>    
-                <div class="row">
-                    <div class="card text-white bg-dark pr-1" style="max-width: 12rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                        <h5 class="card-title">Dark card title</h5>
-                        <p class="card-text"></p>
-                    </div>
-                </div>    
-                <div class="row">
-                    <div class="card text-white bg-dark pr-1" style="max-width: 12rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                        <h5 class="card-title">Dark card title</h5>
-                        <p class="card-text"></p>
-                    </div>
-                </div>    
-                <div class="row">
-                    <div class="card text-white bg-dark pr-1" style="max-width: 12rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                        <h5 class="card-title">Dark card title</h5>
-                        <p class="card-text"></p>
-                    </div>
-                </div>    
-                <div class="row">
-                    <div class="card text-white bg-dark pr-1" style="max-width: 12rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                        <h5 class="card-title">Dark card title</h5>
-                        <p class="card-text"></p>
-                    </div>
-                </div>    
+                        <h5 class="card-temp"></h5>
+                        <h5 class="card-wind"></h5>
+                        <h5 class="card-humid"></h5>
+                        
+                        </div>
+                    </div> 
+                </div>   
+              
+               
             </div>
         </div>
     </main>
