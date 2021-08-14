@@ -60,66 +60,23 @@ function printResults(resultObj) {
   resultContentEl.append(resultCard);
 }
 
-function searchApi(Location) {
+function searchApi(city) {
   // var locQueryUrl = 'https://www.loc.gov/search/?fo=json';
   let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=&appid=${apiKey}`;
   
-  if (location) {
-    queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=Dallas&appid=${apiKey}`;
+  if (city) {
+    queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=` + city + `&appid=${apiKey}`;
   
     fetch(queryUrl)
     .then(headers => headers.json())
     .then(weatherData => {
         console.log(weatherData);
-        return weatherData.json();
+        // return weatherData.json();
     })
   }
 
  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function handleSearchFormSubmit(event) {
-  //   event.preventDefault();
-  
-  //   var searchInputVal = document.querySelector('#search-input').value;
-  //   var formatInputVal = document.querySelector('#format-input').value;
-  
-  //   if (!searchInputVal) {
-    //     console.error('You need a search input value!');
-    //     return;
-    //   }
-    
-    //   var queryString = './search-results.html?q=' + searchInputVal + '&format=' + formatInputVal;
-    
-    //   location.assign(queryString);
-    // }
-    
-    // searchFormEl.addEventListener('submit', handleSearchFormSubmit);
-    
-    
-    
-    
-    
-    
     
 
 
