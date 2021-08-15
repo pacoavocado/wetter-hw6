@@ -1,45 +1,86 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-
-body {
     font-family: Arial, Helvetica, sans-serif;
-    
-
 }
-
-
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     background-color: blueviolet;
-    height: 4em;
-    width: 100vw;
-}
-
-h1 {
-    color: white;
-    font-size: 2em;
-    
-}
-
-/* 
-nav {
-    position:absolute;
-    align-items: flex-start;
-    justify-content: flex-start;
-} */
-
-
-
-
-
-.daily-cards {
+    height: 3em;
     display: flex;
     flex-direction: row;
-    
+    align-items: center;
+    justify-content: space-around;
 }
+
+header h1 {
+    color: whitesmoke;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 13em;
+    padding: 1em;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+}
+
+.city-weather {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content:stretch;
+    margin: 1em;
+    padding: 1em;
+}
+
+.city-weather h2 {
+    font-size: 1.5em;
+
+}
+.city-weather p {
+    font-size: 1.2em;
+    padding: .15em;
+}
+
+.forcasts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.card {
+    background-color: slategray;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-items: flex-start;
+    height: 9em;
+    width: 10em;
+    margin: 1em;
+    padding: 1em;
+}
+
+h4 {
+    font-size: 1.2em;
+    color: whitesmoke;
+    padding-bottom: 1em;
+}
+h5 {
+    font-size: 1em;
+    color: whitesmoke;
+    padding-bottom: 1em;
+
+}
+
