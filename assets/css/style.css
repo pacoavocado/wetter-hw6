@@ -5,11 +5,12 @@
 }
 header {
     background-color: blueviolet;
-    height: 3em;
+    padding: 1em;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    width: 100vw;
 }
 
 header h1 {
@@ -20,6 +21,7 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    flex: 0 1 auto;
 }
 
 form {
@@ -27,6 +29,16 @@ form {
     flex-direction: column;
     width: 13em;
     padding: 1em;
+}
+
+form input {
+    margin-bottom: .5em;
+}
+
+button {
+    background-color: lightskyblue;
+    border-color: blue;
+    cursor: hand;
 }
 
 .results {
@@ -56,16 +68,17 @@ form {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
+    flex: 0 1 auto;
+    
 }
 
 .card {
     background-color: slategray;
     border: 2px solid black;
-    display: flex;
     flex-direction: column;
     align-content: space-between;
     justify-items: flex-start;
+    flex: 0 1 auto;
     height: 9em;
     width: 10em;
     margin: 1em;
