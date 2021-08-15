@@ -73,15 +73,16 @@ function searchApi(city) {
    
     .then(weatherData => {
         console.log(weatherData);
+        
+        let { name } = name;
+        let { icon, descripiton } = data.weather;
+        let { temp, humidity } = data.main;
+        let { speed } = data.wind;
+        console.log(name,icon,descripiton,temp,humidity,speed)
       
     })
   }
 // printResults: function(weatherData) {
-//   let { name } = data;
-//   let { icon, descripiton } = data.weather;
-//   let { temp, humidity } = data.main;
-//   let { speed } = data.wind;
-//   console.log(name,icon,descripiton,temp,humidity,speed)
 // } 
  
 }
