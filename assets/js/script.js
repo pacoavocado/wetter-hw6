@@ -71,13 +71,15 @@ function searchApi(city) {
     .then(weatherData => {
       console.log(weatherData);
       
-        const  name = location.name;
-        // const  icon = forecast.symbol;
-        // const  descripiton  = ;
-        const  temp = forecast.temperature.imperial;
-        const  humidity  = forcast.humidity.value;
-        const  speed  = forcast.windspeed.unit;
-        console.log(name,temp,humidity,speed)
+      var nameValue = city['name'];
+      var temp = data['main']['temp'];
+      var description = data['main'][0]['description'];
+
+
+
+      location.innerHTML = namevalue;
+ 
+        console.log(nameValue)
       // printResults(weatherData)
     })
   }
