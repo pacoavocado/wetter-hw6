@@ -54,6 +54,12 @@ function printResults(weatherData) {
           // resultContentEl.append(resultCard);
         }
         
+        
+
+        
+        
+        
+        
         function searchApi(city) {
           // var locQueryUrl = 'https://www.loc.gov/search/?fo=json';
           let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=&cnt=31&units=imperial&appid=${apiKey}`;
@@ -67,12 +73,27 @@ function printResults(weatherData) {
             
             .then(weatherData => {
               console.log(weatherData);
+              let lat = weatherData.city.coord.lat
+              let lon = weatherData.city.coord.lon
+
+              let queryUrl1 = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}`
               
+              fetch(queryUrl1)
+              .then(headers1 => headers1.json())
+
+              .then(oneData => {
+                console.log(oneData)
+              })
+
+
+
               var nameValue = weatherData.city.name;
               var temperature = weatherData.list[0].main.temp;
               var topWind = weatherData.list[0].wind.speed;
               var humid = weatherData.list[0].main.humidity;
               
+
+
               var currentCity = document.querySelector('.location');
               var addCity = document.createTextNode(nameValue);
               currentCity.appendChild(addCity);
@@ -103,6 +124,10 @@ function printResults(weatherData) {
  
 }
     
+
+
+
+
 
 
 function handleSearchFormSubmit(event) {
