@@ -3,6 +3,21 @@ var searchFormEl = document.querySelector('#search-form');
 var resultTextEl = document.querySelector('#result-text')
 var resultContextEl = document.querySelector('#result-content')
 
+let todayTwo = moment().format('MM/DD/YY');
+let today = moment().format('MMMM Do, YYYY');
+let toDay = document.querySelector('.date');
+let addDay = document.createTextNode(today);
+toDay.appendChild(addDay)
+console.log(today)
+
+let tomorrow = moment(today, "MM/DD/YY").add("DD", 1);
+
+
+console.log(todayTwo);
+
+
+
+
 
 
 function getParams() {
@@ -100,14 +115,19 @@ function printResults(weatherData) {
             
             var llUvi = oneData.current.uvi
             var llUvIndex = document.querySelector('.uv-inded');
-            var addUvi = document.createTextNode(llUvi) ?? "0";
+            var addUvi = document.createTextNode(llUvi);
+            // if (addUvi === 0) {
+            // llUvIndex.appendChild(`null`);
+            // }
+            // else {
             llUvIndex.appendChild(addUvi);
-            
+            // }
           })
 
 
 
           var nameValue = weatherData.city.name;
+          
           var temperature = weatherData.list[0].main.temp;
           var topWind = weatherData.list[0].wind.speed;
           var humid = weatherData.list[0].main.humidity;

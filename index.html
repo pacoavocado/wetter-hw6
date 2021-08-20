@@ -8,7 +8,6 @@
     <!-- i dont think i like bootstrap that much now -->
     
     
-    
     <title>W  E  A  T  H  E  R</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
@@ -16,7 +15,7 @@
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-     <main> 
+    <main> 
         <nav>
             <form id="search-form">
                 <input id="search-input" class="form-input" type="text" placeholder="enter a city">
@@ -26,70 +25,72 @@
         <div class="results">
             <div class="city-weather">
                 <div class="">
-                  <h2 class="location">location: </h2>
-                  <p class="current-temp">temp: </p>
-                  <p class="current-wind">wind: </p>
-                  <p class="current-humidity">humidity: </p>
-                  <p class="uv index">uv index</p>
+                    <h2 class="location">location: </h2><h2 class="date">date: </h2>
+                    <p class="current-temp">temp: </p>
+                    <p class="current-wind">wind: </p>
+                    <p class="current-humidity">humidity: </p>
+                    <p class="uv-index">uv index: </p>
                 </div>
             </div>
             <h2>5-Day Forcast</h2>
             <div class="forcasts">
-               
-                    <div class="card" style="max-width: 12rem;">
-                        <div class="day"></div>
-                            <div class="daily-card">
-                            <h4 class="card-date">date:</h4>
-                            <img src="" alt="">
-                            <h5 class="card-temp">temp:</h5>
-                            <h5 class="card-wind">wind:</h5>
-                            <h5 class="card-humidity">humidity:</h5>
-                            </div>
-                    </div> 
-                    <div class="card text-white bg-dark pr-1" style="max-width: 12rem;">
-                        <div class="day"></div>
-                            <div class="daily-card">
-                            <h4 class="card-date">date:</h4>
-                            <img src="" alt="">
-                            <h5 class="card-temp">temp:</h5>
-                            <h5 class="card-wind">wind:</h5>
-                            <h5 class="card-humidity">humidity:</h5>
-                            </div>
-                    </div> 
-                    <div class="card text-white bg-dark pr-1" style="max-width: 12rem;">
-                        <div class="day"></div>
-                            <div class="daily-card">
-                            <h4 class="card-date">date:</h4>
-                            <img src="" alt="">
-                            <h5 class="card-temp">temp:</h5>
-                            <h5 class="card-wind">wind:</h5>
-                            <h5 class="card-humidity">humidity:</h5>
-                            </div>
-                    </div> 
-                    <div class="card text-white bg-dark pr-1" style="max-width: 12rem;">
-                        <div class="day"></div>
-                            <div class="daily-card">
-                            <h4 class="card-date">date:</h4>
-                            <img src="" alt="">
-                            <h5 class="card-temp">temp:</h5>
-                            <h5 class="card-wind">wind:</h5>
-                            <h5 class="card-humidity">humidity:</h5>
-                            </div>
-                    </div> 
-                    <div class="card text-white bg-dark pr-1" style="max-width: 12rem;">
-                        <div class="day"></div>
-                            <div class="daily-card">
-                            <h4 class="card-date">date:</h4>
-                            <img src="" alt="">
-                            <h5 class="card-temp">temp:</h5>
-                            <h5 class="card-wind">wind:</h5>
-                            <h5 class="card-humidity">humidity:</h5>
-                            </div>
-                    </div> 
-              
+                
+                <div class="card" style="max-width: 12rem;">
+                    <div class="day"></div>
+                    <div class="daily-card">
+                        <h4 class="card-date">date:</h4>
+                        <img src="" alt="">
+                        <h5 class="card-temp">temp:</h5>
+                        <h5 class="card-wind">wind-speed:</h5>
+                        <h5 class="card-humidity">humidity:</h5>
+                    </div>
+                </div> 
+                <div class="card text-white bg-dark pr-1" style="max-width: 12rem;">
+                    <div class="day"></div>
+                    <div class="daily-card">
+                        <h4 class="card-date">date:</h4>
+                        <img src="" alt="">
+                        <h5 class="card-temp">temp:</h5>
+                        <h5 class="card-wind">wind:</h5>
+                        <h5 class="card-humidity">humidity:</h5>
+                    </div>
+                </div> 
+                <div class="card text-white bg-dark pr-1" style="max-width: 12rem;">
+                    <div class="day"></div>
+                    <div class="daily-card">
+                        <h4 class="card-date">date:</h4>
+                        <img src="" alt="">
+                        <h5 class="card-temp">temp:</h5>
+                        <h5 class="card-wind">wind:</h5>
+                        <h5 class="card-humidity">humidity:</h5>
+                    </div>
+                </div> 
+                <div class="card text-white bg-dark pr-1" style="max-width: 12rem;">
+                    <div class="day"></div>
+                    <div class="daily-card">
+                        <h4 class="card-date">date:</h4>
+                        <img src="" alt="">
+                        <h5 class="card-temp">temp:</h5>
+                        <h5 class="card-wind">wind:</h5>
+                        <h5 class="card-humidity">humidity:</h5>
+                    </div>
+                </div> 
+                <div class="card text-white bg-dark pr-1" style="max-width: 12rem;">
+                    <div class="day"></div>
+                    <div class="daily-card">
+                        <h4 class="card-date">date:</h4>
+                        <img src="" alt="">
+                        <h5 class="card-temp">temp:</h5>
+                        <h5 class="card-wind">wind:</h5>
+                        <h5 class="card-humidity">humidity:</h5>
+                    </div>
+                </div> 
+                
             </div>
         </div>
     </main>
+    <!-- <script src="/js/moment.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
