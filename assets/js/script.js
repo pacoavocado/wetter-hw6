@@ -58,58 +58,71 @@ function printResults(weatherData) {
 
         
         
+
+
+    function searchApi(city) {
+      // var locQueryUrl = 'https://www.loc.gov/search/?fo=json';
+      let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=&cnt=31&units=imperial&appid=${apiKey}`;
+      
+      if (city) {
+        queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=` + city + `&cnt=31&units=imperial&appid=${apiKey}`;
+        
+        fetch(queryUrl)
+        .then(headers => headers.json())
         
         
-        function searchApi(city) {
-          // var locQueryUrl = 'https://www.loc.gov/search/?fo=json';
-          let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=&cnt=31&units=imperial&appid=${apiKey}`;
+        .then(weatherData => {
+          console.log(weatherData);
+          let lat = weatherData.city.coord.lat
+          let lon = weatherData.city.coord.lon
+
+          let queryUrl1 = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&units=imperial&appid=${apiKey}`
           
-          if (city) {
-            queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=` + city + `&cnt=31&units=imperial&appid=${apiKey}`;
+          fetch(queryUrl1)
+          .then(headers1 => headers1.json())
+
+          .then(oneData => {
+            console.log(oneData)
+            var llTemp = oneData.current.temp
+            var lltemp = document.querySelector('.current-temp');
+            var addTemp = document.createTextNode(llTemp);
+            lltemp.appendChild(addTemp);
+
+            var llWind = oneData.current.wind_speed
+            var llwind = document.querySelector('.current-wind');
+            var addWind = document.createTextNode(llWind);
+            llwind.appendChild(addWind);
+
+            var llHumidity = oneData.current.humidity
+            var llhumidity = document.querySelector('.current-humidity');
+            var addHumidity = document.createTextNode(llHumidity);
+            llhumidity.appendChild(addHumidity);
             
-            fetch(queryUrl)
-            .then(headers => headers.json())
+            var llUvi = oneData.current.uvi
+            var llUvIndex = document.querySelector('.uv-inded');
+            var addUvi = document.createTextNode(llUvi) ?? "0";
+            llUvIndex.appendChild(addUvi);
             
-            
-            .then(weatherData => {
-              console.log(weatherData);
-              let lat = weatherData.city.coord.lat
-              let lon = weatherData.city.coord.lon
-
-              let queryUrl1 = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}`
-              
-              fetch(queryUrl1)
-              .then(headers1 => headers1.json())
-
-              .then(oneData => {
-                console.log(oneData)
-              })
+          })
 
 
 
-              var nameValue = weatherData.city.name;
-              var temperature = weatherData.list[0].main.temp;
-              var topWind = weatherData.list[0].wind.speed;
-              var humid = weatherData.list[0].main.humidity;
-              
+          var nameValue = weatherData.city.name;
+          var temperature = weatherData.list[0].main.temp;
+          var topWind = weatherData.list[0].wind.speed;
+          var humid = weatherData.list[0].main.humidity;
+          
 
 
-              var currentCity = document.querySelector('.location');
-              var addCity = document.createTextNode(nameValue);
-              currentCity.appendChild(addCity);
-              
-              var currentTemp = document.querySelector('.current-temp');
-              var addTemp = document.createTextNode(temperature);
-              currentTemp.appendChild(addTemp);
-              
-              var currentWind = document.querySelector('.current-wind');
-              var addWind = document.createTextNode(topWind);
-              currentWind.appendChild(addWind);
-              
-              var currentHumidity = document.querySelector('.current-humidity');
-              var addHumidity = document.createTextNode(humid);
-              currentHumidity.appendChild(addHumidity);
-             
+          var currentCity = document.querySelector('.location');
+          var addCity = document.createTextNode(nameValue);
+          currentCity.appendChild(addCity);
+          
+          
+          
+          
+          
+          
               
       console.log(nameValue)
       console.log(temperature)
