@@ -77,10 +77,10 @@ function printResults(weatherData) {
 
     function searchApi(city) {
       // var locQueryUrl = 'https://www.loc.gov/search/?fo=json';
-      let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=&cnt=31&units=imperial&appid=${apiKey}`;
+      let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=&cnt=32&units=imperial&appid=${apiKey}`;
       
       if (city) {
-        queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=` + city + `&cnt=31&units=imperial&appid=${apiKey}`;
+        queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=` + city + `&cnt=32&units=imperial&appid=${apiKey}`;
         
         fetch(queryUrl)
         .then(headers => headers.json())
@@ -128,20 +128,93 @@ function printResults(weatherData) {
 
           var nameValue = weatherData.city.name;
           
-          var temperature = weatherData.list[0].main.temp;
-          var topWind = weatherData.list[0].wind.speed;
-          var humid = weatherData.list[0].main.humidity;
-          
+          var temperature1 = weatherData.list[0].main.temp;
+          var topWind1 = weatherData.list[0].wind.speed;
+          var humid1 = weatherData.list[0].main.humidity;
+         
+          var temperature2 = weatherData.list[7].main.temp;
+          var topWind2 = weatherData.list[7].wind.speed;
+          var humid2 = weatherData.list[7].main.humidity;
+         
+          var temperature3 = weatherData.list[15].main.temp;
+          var topWind3 = weatherData.list[15].wind.speed;
+          var humid3 = weatherData.list[15].main.humidity;
+         
+          var temperature4 = weatherData.list[23].main.temp;
+          var topWind4 = weatherData.list[23].wind.speed;
+          var humid4 = weatherData.list[23].main.humidity;
+         
+          var temperature5 = weatherData.list[31].main.temp;
+          var topWind5 = weatherData.list[31].wind.speed;
+          var humid5 = weatherData.list[31].main.humidity;
+         
 
 
           var currentCity = document.querySelector('.location');
           var addCity = document.createTextNode(nameValue);
           currentCity.appendChild(addCity);
           
+        let cardTemp1 = document.querySelector('.card-temp1');
+        let addTemp1 = document.createTextNode(temperature1);
+        cardTemp1.appendChild(addTemp1);          
           
+        let cardTemp2 = document.querySelector('.card-temp2');
+        let addTemp2 = document.createTextNode(temperature2);
+        cardTemp2.appendChild(addTemp2);          
           
+        let cardTemp3 = document.querySelector('.card-temp3');
+        let addTemp3 = document.createTextNode(temperature3);
+        cardTemp3.appendChild(addTemp3);          
           
+        let cardTemp4 = document.querySelector('.card-temp4');
+        let addTemp4 = document.createTextNode(temperature4);
+        cardTemp4.appendChild(addTemp4);          
           
+        let cardTemp5 = document.querySelector('.card-temp5');
+        let addTemp5 = document.createTextNode(temperature5);
+        cardTemp5.appendChild(addTemp5);          
+          
+        let cardWind1 = document.querySelector('.card-wind1');
+        let addWind1 = document.createTextNode(topWind1);
+        cardWind1.appendChild(addWind1);          
+          
+        let cardWind2 = document.querySelector('.card-wind2');
+        let addWind2 = document.createTextNode(topWind2);
+        cardWind2.appendChild(addWind2);          
+          
+        let cardWind3 = document.querySelector('.card-wind3');
+        let addWind3 = document.createTextNode(topWind3);
+        cardWind3.appendChild(addWind3);          
+          
+        let cardWind4 = document.querySelector('.card-wind4');
+        let addWind4 = document.createTextNode(topWind4);
+        cardWind4.appendChild(addWind4);          
+          
+        let cardWind5 = document.querySelector('.card-wind5');
+        let addWind5 = document.createTextNode(topWind5);
+        cardWind5.appendChild(addWind5);          
+          
+        let cardHumid1 = document.querySelector('.card-humidity1');
+        let addHumid1 = document.createTextNode(humid1);
+        cardHumid1.appendChild(addHumid1);          
+          
+        let cardHumid2 = document.querySelector('.card-humidity2');
+        let addHumid2 = document.createTextNode(humid2);
+        cardHumid2.appendChild(addHumid2);          
+          
+        let cardHumid3 = document.querySelector('.card-humidity3');
+        let addHumid3 = document.createTextNode(humid3);
+        cardHumid3.appendChild(addHumid3);          
+          
+        let cardHumid4 = document.querySelector('.card-humidity4');
+        let addHumid4 = document.createTextNode(humid4);
+        cardHumid4.appendChild(addHumid4);          
+          
+        let cardHumid5 = document.querySelector('.card-humidity5');
+        let addHumid5 = document.createTextNode(humid5);
+        cardHumid5.appendChild(addHumid5);          
+          
+        
           
               
       console.log(nameValue)
