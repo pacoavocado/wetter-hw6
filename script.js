@@ -1,7 +1,7 @@
 let apiKey = "82177c8d5ce71c99ccc460caecda9690";
-var searchFormEl = document.querySelector('#search-form');
-var resultTextEl = document.querySelector('#result-text')
-var resultContextEl = document.querySelector('#result-content')
+let searchFormEl = document.querySelector('#search-form');
+let resultTextEl = document.querySelector('#result-text')
+let resultContextEl = document.querySelector('#result-content')
 
 let todayTwo = moment().format('MM/DD/YY');
 let today = moment().format('MMMM Do, YYYY');
@@ -22,9 +22,9 @@ console.log(todayTwo);
 
 function getParams() {
 
-  var searchParamsArr = document.location.search.split('&');
+  let searchParamsArr = document.location.search.split('&');
 
-  var city = searchParamsArr[0].split('=').pop();
+  let city = searchParamsArr[0].split('=').pop();
 
   searchApi(city);
 }
@@ -32,14 +32,14 @@ function getParams() {
 function printResults(weatherData) {
   console.log(weatherData);
 
-  // var resultCard = document.createElement('div');
+  // let resultCard = document.createElement('div');
   // resultCard.classList.add('card');
 
   
-  // var titleEl = document.createElement('h2');
+  // let titleEl = document.createElement('h2');
   // titleEl.textContent = nameValue;
   
-  // var bodyContentEl = document.createElement('h4');
+  // let bodyContentEl = document.createElement('h4');
   // bodyContentEl.innerHTML =
   //   '<strong>Date:</strong> ' + weatherData.date + '<br/>';
   
@@ -59,7 +59,7 @@ function printResults(weatherData) {
           //     '<strong>Description:</strong>  No description for this entry.';
           // }
           
-          // var linkButtonEl = document.createElement('a');
+          // let linkButtonEl = document.createElement('a');
           // linkButtonEl.textContent = 'Read More';
           // linkButtonEl.setAttribute('href', weatherData.url);
           // linkButtonEl.classList.add('btn', 'btn-dark');
@@ -76,7 +76,8 @@ function printResults(weatherData) {
 
 
     function searchApi(city) {
-      // var locQueryUrl = 'https://www.loc.gov/search/?fo=json';
+
+      // let locQueryUrl = 'https://www.loc.gov/search/?fo=json';
       let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=&cnt=32&units=imperial&appid=${apiKey}`;
       
       if (city) {
@@ -95,63 +96,63 @@ function printResults(weatherData) {
           
           fetch(queryUrl1)
           .then(headers1 => headers1.json())
-
+// use span in html for data insert !!!!
           .then(oneData => {
             console.log(oneData)
-            var llTemp = oneData.current.temp
-            var lltemp = document.querySelector('.current-temp');
-            var addTemp = document.createTextNode(llTemp);
+            let llTemp = oneData.current.temp
+            let lltemp = document.querySelector('.current-temp');
+            let addTemp = document.createTextNode(llTemp);
             lltemp.appendChild(addTemp);
-
-            var llWind = oneData.current.wind_speed
-            var llwind = document.querySelector('.current-wind');
-            var addWind = document.createTextNode(llWind);
+// use innerText or textContent
+            let llWind = oneData.current.wind_speed
+            let llwind = document.querySelector('.current-wind');
+            let addWind = document.createTextNode(llWind);
             llwind.appendChild(addWind);
 
-            var llHumidity = oneData.current.humidity
-            var llhumidity = document.querySelector('.current-humidity');
-            var addHumidity = document.createTextNode(llHumidity);
+            let llHumidity = oneData.current.humidity
+            let llhumidity = document.querySelector('.current-humidity');
+            let addHumidity = document.createTextNode(llHumidity);
             llhumidity.appendChild(addHumidity);
             
-            var llUvi = oneData.current.uvi
-            var llUvIndex = document.querySelector('.uv-inded');
-            var addUvi = document.createTextNode(llUvi);
-            // if (addUvi === 0) {
-            // llUvIndex.appendChild(`null`);
-            // }
-            // else {
+            let llUvi = oneData.current.uvi
+            let llUvIndex = document.querySelector('.uv-index');
+            let addUvi = document.createTextNode(llUvi);
+            if (addUvi === 0) {
+            llUvIndex.appendChild(`null`);
+            }
+            else {
             llUvIndex.appendChild(addUvi);
-            // }
+            }
           })
 
 
 
-          var nameValue = weatherData.city.name;
+          let nameValue = weatherData.city.name;
           
-          var temperature1 = weatherData.list[0].main.temp;
-          var topWind1 = weatherData.list[0].wind.speed;
-          var humid1 = weatherData.list[0].main.humidity;
+          let temperature1 = weatherData.list[0].main.temp;
+          let topWind1 = weatherData.list[0].wind.speed;
+          let humid1 = weatherData.list[0].main.humidity;
          
-          var temperature2 = weatherData.list[7].main.temp;
-          var topWind2 = weatherData.list[7].wind.speed;
-          var humid2 = weatherData.list[7].main.humidity;
+          let temperature2 = weatherData.list[7].main.temp;
+          let topWind2 = weatherData.list[7].wind.speed;
+          let humid2 = weatherData.list[7].main.humidity;
          
-          var temperature3 = weatherData.list[15].main.temp;
-          var topWind3 = weatherData.list[15].wind.speed;
-          var humid3 = weatherData.list[15].main.humidity;
+          let temperature3 = weatherData.list[15].main.temp;
+          let topWind3 = weatherData.list[15].wind.speed;
+          let humid3 = weatherData.list[15].main.humidity;
          
-          var temperature4 = weatherData.list[23].main.temp;
-          var topWind4 = weatherData.list[23].wind.speed;
-          var humid4 = weatherData.list[23].main.humidity;
+          let temperature4 = weatherData.list[23].main.temp;
+          let topWind4 = weatherData.list[23].wind.speed;
+          let humid4 = weatherData.list[23].main.humidity;
          
-          var temperature5 = weatherData.list[31].main.temp;
-          var topWind5 = weatherData.list[31].wind.speed;
-          var humid5 = weatherData.list[31].main.humidity;
+          let temperature5 = weatherData.list[31].main.temp;
+          let topWind5 = weatherData.list[31].wind.speed;
+          let humid5 = weatherData.list[31].main.humidity;
          
 
 
-          var currentCity = document.querySelector('.location');
-          var addCity = document.createTextNode(nameValue);
+          let currentCity = document.querySelector('.location');
+          let addCity = document.createTextNode(nameValue);
           currentCity.appendChild(addCity);
           
         let cardTemp1 = document.querySelector('.card-temp1');
@@ -213,20 +214,25 @@ function printResults(weatherData) {
         let cardHumid5 = document.querySelector('.card-humidity5');
         let addHumid5 = document.createTextNode(humid5);
         cardHumid5.appendChild(addHumid5);          
-          
         
-          
-              
+        let iconCode1 = weatherData.list[0].weather[0].icon
+        
+        let cardIcon1 = document.querySelector('wearther-icon1');
+        
+        
+        let icon1 = `http://openweathermap.org/img/wn/${iconCode1}@2x.png`;
+        
+        
+        console.log(iconCode1);
+        
+         icon1 = cardIcon1.innerHTML;
+      
+      
       console.log(nameValue)
-      console.log(temperature)
-      console.log(topWind)
-      console.log(humid)
-      // printResults(weatherData)
+      
       
     })
   }
-// printResults: function(weatherData) {
-// } 
  
 }
     
@@ -239,7 +245,7 @@ function printResults(weatherData) {
 function handleSearchFormSubmit(event) {
     event.preventDefault();
   
-    var searchInputVal = document.querySelector('#search-input').value;
+    let searchInputVal = document.querySelector('#search-input').value;
    
   
     if (!searchInputVal) {
